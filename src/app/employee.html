@@ -1,0 +1,96 @@
+<form  style="margin-top: 50px;" #employeeForm="ngForm" style="margin-left: 10%;" (ngSubmit)="onSubmit()" novalidate>
+
+  <div>
+      <label for="firstName">First Name:</label>
+      <br/>
+      <input type="text" id="firstName" name="firstName" [(ngModel)]="employeeModel.FirstName" required #firstname="ngModel">
+      
+  </div>
+  
+  <div>
+      <label for="lastName">Last Name:</label>
+      <br/>
+      <input type="text" id="lastName" name="lastName" [(ngModel)]="employeeModel.LastName">
+  </div>
+  
+  <div>
+      <label for="Email">Email:</label>
+      <br/>
+      <input type="email" id="Email" name="Email" [(ngModel)]="employeeModel.Email">
+  </div>
+  
+  <div>
+      <label for="contactNumber">Contact Number:</label>
+      <br/>
+      <input type="tel" id="contactNumber" maxlength="10" minlength="10" name="Contact Number" [(ngModel)]="employeeModel.ContactNumber">
+  </div>
+  
+
+  <div>
+      <label for="Address">Address:</label>
+      <br/>
+      <textarea id="Address" style="margin-bottom: 20px;" name="Address" [(ngModel)]="employeeModel.Address"></textarea>
+  </div>
+  
+  <div>
+      <label for="userName">Username:</label>
+      <br/>
+      <input type="text" id="userName" name="Username" [(ngModel)]="employeeModel.UserName">
+  </div>
+  
+  <div>
+      <label for="password">Password:</label>
+      <br/>
+      <input type="password" id="password" minlength="8" name="Password" [(ngModel)]="employeeModel.Password">
+  </div>
+  
+  <div>
+      <label for="Gender">Gender:</label>
+      <br/>
+      <input type="radio" name="Gender" class="Gender" id="Male" value="Male" style="margin-bottom: 0px;" [(ngModel)]="employeeModel.Gender">
+      <label for="Male">Male</label>  
+      <br/>
+      <input type="radio" name="Gender" class="Gender"  id="Female" value="Female" [(ngModel)]="employeeModel.Gender">
+      <label for="Female">Female</label>
+         
+      
+  </div>
+  
+  <div>
+      <label for="Qualification">Qualification:</label>
+      <br/>
+      <select name="Qualification" id="Qualification" style="margin-bottom: 20px; width: 120px;" [(ngModel)]="employeeModel.Qualification">
+          <option label="--Select--"></option>
+          <option *ngFor="let q of arrQualification">{{q}}</option>
+      </select>
+  </div>
+  
+  <div>
+      <label for="Experience">Experience:</label>
+      <br/>
+      <select  id="Experience" style="margin-bottom: 20px;" name="Experience" [(ngModel)]="employeeModel.Experience">
+          <option label="--Select--"></option>
+          <option *ngFor="let e of arrExperience" >{{e}}</option>
+      </select>
+  </div>
+  
+  <div>
+      <label for="check">Coding Languages:</label>
+      <br/>
+      <div *ngFor="let l of arrlang"  >
+        <input type="checkbox"  style="margin-bottom: 0px;"   name="{{l}}" [ngModel]="employeeModel.CodingLanguages" >
+        <label for="{{l}}">{{l}}</label>
+      </div>
+      
+      
+  </div>
+
+  <button type="submit" id="submit" onsubmit="onSubmit()" style="margin-top: 20px;" routerLink="/employees" routerLinkActive="active">
+      <b>Submit</b>
+  </button>
+  <br/>
+</form>
+
+
+
+<router-outlet></router-outlet>
