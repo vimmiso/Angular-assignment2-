@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Employee } from './employee.model';
+// import { Employee } from './employee.model';
 
 @Component({
   selector: 'app-root',
@@ -8,30 +8,32 @@ import { Employee } from './employee.model';
 })
 export class AppComponent implements OnInit{
   
-  title = 'firstapp';
-  arrQualification = ["B.E","B.Tech","M.E","M.Tech"];
-  arrExperience = ["1","2","3","4","5"];
-  arrlang = ["C/C++","Java","C#","Php","Python"];
-  arrlangdefault=[];
+  // title = 'firstapp';
+  // arrQualification = ["B.E","B.Tech","M.E","M.Tech"];
+  // arrExperience = ["1","2","3","4","5"];
+  // arrlang = ["C/C++","Java","C#","Php","Python"];
+  // arrlangdefault=[];
 
   
-  employeeModel = new Employee();
+  // employeeModel = new Employee();
+  //  arrEmployee: Employee[];
  
   constructor(){
 
   }
  
   ngOnInit(){
-    this.employeeModel.Qualification="B.Tech";
-    this.employeeModel.Experience=3;
-    this.employeeModel.CodingLanguages=[ 
-    "C/C++","Java"
-  ];
+  //   this.employeeModel.Qualification="B.Tech";
+  //   this.employeeModel.Experience=3;
+  //   this.employeeModel.CodingLanguages=[ 
+  //   "C/C++","Java"
+  // ];
 
   }
 
-  
-  onSubmit(){
-    console.log(this.employeeModel);
-  }
+  // // arrEmployee = [];
+  // onSubmit(){
+  //   this.arrEmployee.push(this.employeeModel);
+  //   console.log(this.employeeModel);
+  // }
 }

@@ -1,29 +1,35 @@
-<div id="emp">
+
+<div>Here list will appear.</div>
+<div id="emp" *ngFor="let employee of arrEmployee">
     <div>
         <label for="firstName">First Name:</label>
         <br/>
-        <p type="text" id="firstName" name="firstName" [(ngModel)]="employeeModel.FirstName" required #firstname="ngModel">
+        <p type="text" id="firstName" name="firstName">
+            {{employee.FirstName}}
         </p>
     </div>
     
     <div>
         <label for="lastName">Last Name:</label>
         <br/>
-        <p type="text" id="lastName" name="lastName" [(ngModel)]="employeeModel.LastName">
+        <p type="text" id="lastName" name="lastName" >
+           {{ employee.LastName}}
         </p>
     </div>
     
     <div>
         <label for="Email">Email:</label>
         <br/>
-        <p type="email" id="Email" name="Email" [(ngModel)]="employeeModel.Email">
+        <p type="email" id="Email" name="Email">
+            {{employee.Email}}
         </p>
     </div>
     
     <div>
         <label for="contactNumber">Contact Number:</label>
         <br/>
-        <p type="tel" id="contactNumber" maxlength="10" minlength="10" name="Contact Number" [(ngModel)]="employeeModel.ContactNumber">
+        <p type="tel" id="contactNumber" maxlength="10" minlength="10" name="Contact Number">
+            {{employee.ContactNumber}}
         </p>
     </div>
     
@@ -31,33 +37,34 @@
     <div>
         <label for="Address">Address:</label>
         <br/>
-        <p id="Address" style="margin-bottom: 20px;" name="Address" [(ngModel)]="employeeModel.Address">
+        <p id="Address" style="margin-bottom: 20px;" name="Address">
+            {{employee.Address}}
         </p>
     </div>
     
     <div>
         <label for="userName">Username:</label>
         <br/>
-        <p type="text" id="userName" name="Username" [(ngModel)]="employeeModel.UserName">
+        <p type="text" id="userName" name="Username">
+            {{employee.UserName}}
         </p>
     </div>
     
     <div>
         <label for="password">Password:</label>
         <br/>
-        <p type="password" id="password" minlength="8" name="Password" [(ngModel)]="employeeModel.Password">
+        <p type="password" id="password" minlength="8" name="Password">
+            {{employee.Password}}
         </p>
     </div>
     
     <div>
         <label for="Gender">Gender:</label>
         <br/>
-        <p name="Gender" class="Gender" id="Male" value="Male" style="margin-bottom: 0px;" [(ngModel)]="employeeModel.Gender">
+        <p name="Gender" class="Gender" id="Male" value="Male" style="margin-bottom: 0px;">
+            {{employee.Gender}}
         </p>
-        <!-- <label for="Male">Male</label>   -->
-        <!-- <br/>
-        <input type="radio" name="Gender" class="Gender"  id="Female" value="Female" ngModel>
-        <label for="Female">Female</label> -->
+        
            
         
     </div>
@@ -65,31 +72,35 @@
     <div>
         <label for="Qualification">Qualification:</label>
         <br/>
-        <p name="Qualification" id="Qualification" style="margin-bottom: 20px; width: 120px;" [(ngModel)]="employeeModel.Qualification">
-            <!-- <option label="--Select--"></option>
-            <option *ngFor="let q of arrQualification">{{q}}</option> -->
+        <p name="Qualification" id="Qualification" style="margin-bottom: 20px; width: 120px;">
+            {{employee.Qualification}}
+            
         </p>
     </div>
     
     <div>
         <label for="Experience">Experience:</label>
         <br/>
-        <p  id="Experience" style="margin-bottom: 20px;" name="Experience" [(ngModel)]="employeeModel.Experience">
-            <!-- <option label="--Select--"></option>
-            <option *ngFor="let e of arrExperience" >{{e}}</option> -->
+        <p  id="Experience" style="margin-bottom: 20px;" name="Experience">
+            {{employee.Experience}}
+            
         </p>
     </div>
     
     <div>
         <label for="check">Coding Languages:</label>
         <br/>
-        <div *ngFor="let l of arrlang"  >
-            <p value="{{l}}" style="margin-bottom: 0px;" name="Language" [ngModel]="employeeModel.CodingLanguages" >
+       
+            <p  style="margin-bottom: 0px;" name="Language">
+                {{employee.CodingLanguages}}
             </p>
-          <label for="{{l}}">{{l}}</label>
-        </div>
+       
+        
         
         
     </div>
     <p>its me</p>
+    <button type="submit" id="submit" onsubmit="onSubmit()" style="margin-top: 20px;" >
+        <b>Submit</b>
+    </button>
 </div>
